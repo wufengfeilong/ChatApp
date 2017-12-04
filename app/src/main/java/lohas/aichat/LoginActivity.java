@@ -41,8 +41,10 @@ public class LoginActivity extends AppCompatActivity {
 
     @OnClick(R.id.login_btn)
     public void login() {
-        String name = userName.getText().toString();
-        String pwd = password.getText().toString();
+//        String name = userName.getText().toString();
+//        String pwd = password.getText().toString();
+        String name = "zfw";
+        String pwd = "123";
         if (name == null || "".equals(name)) {
             userName.setError("请输入你的用户名。");
             return;

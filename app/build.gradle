@@ -23,13 +23,16 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     //noinspection GradleCompatible
+    // butterknife
+    // btmNavBar
+    // QMUI
     compile 'com.android.support:appcompat-v7:26.+'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
-    // butterknife
     compile 'com.jakewharton:butterknife:8.8.1'
-    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
-    // QMUI
+    compile 'com.ashokvarma.android:bottom-navigation-bar:2.0.3'
     compile 'com.qmuiteam:qmui:1.0.4'
+    compile 'com.android.support:support-v4:26.+'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
 }
 configurations.all {
     resolutionStrategy.eachDependency { DependencyResolveDetails details ->
