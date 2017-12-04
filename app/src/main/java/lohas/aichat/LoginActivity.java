@@ -10,26 +10,25 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import lohas.aichat.activity.HomeActivity;
 
-public class MainActivity extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
 
 
     @BindView(R.id.user_name)
     EditText userName;
     @BindView(R.id.password)
     EditText password;
-    @BindView(R.id.login_btn)
-    Button loginBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             Window window = getWindow();
@@ -61,6 +60,18 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "登录成功", Toast.LENGTH_SHORT).show();
         } else {
             Toast.makeText(this, "用户名密码不匹配。", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    @OnClick({R.id.forget_pwd, R.id.register_user})
+    public void onViewClicked(View view) {
+        switch (view.getId()) {
+            case R.id.forget_pwd:
+                Toast.makeText(this, "忘记密码", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.register_user:
+                Toast.makeText(this, "注册帐号", Toast.LENGTH_SHORT).show();
+                break;
         }
     }
 }
